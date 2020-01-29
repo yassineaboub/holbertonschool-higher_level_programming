@@ -1,0 +1,126 @@
+The ``7-base_geometry.py`` module
+======================
+
+First import
+``BaseGeometry`` from the ``7-base_geometry`` module:
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+-------------------
+""" Tests """
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", 0)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[5]>", line 1, in <module>
+        bg.integer_validator("age", 0)
+      File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 10, in integer_validator
+        raise ValueError("{} must be greater than 0".format(name))
+    ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -4)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[6]>", line 1, in <module>
+        bg.integer_validator("distance", -4)
+      File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 10, in integer_validator
+        raise ValueError("{} must be greater than 0".format(name))
+    ValueError: distance must be greater than 0
+
+>>> bg.area()
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[7]>", line 1, in <module>
+        bg.area()
+      File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 4, in area
+        raise Exception("area() is not implemented")
+    Exception: area() is not implemented
+
+>>> bg.integer_validator()
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[8]>", line 1, in <module>
+        bg.integer_validator()
+    TypeError: integer_validator() takes exactly 3 arguments (1 given)
+
+>>> integer_validator(age, (4,))
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[13]>", line 1, in <module>
+        integer_validator(age, 4)
+    NameError: name 'integer_validator' is not defined
+
+>>> integer_validator(age, [3])
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[15]>", line 1, in <module>
+        integer_validator(age, [3])
+    NameError: name 'integer_validator' is not defined
+
+>>> integer_validator(age, True)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[16]>", line 1, in <module>
+        integer_validator(age, True)
+    NameError: name 'integer_validator' is not defined
+
+>>> integer_validator(age, {3, 4})
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[17]>", line 1, in <module>
+        integer_validator(age, {3, 4})
+    NameError: name 'integer_validator' is not defined
+
+>>> integer_validator(age, None)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[18]>", line 1, in <module>
+        integer_validator(age, None)
+    NameError: name 'integer_validator' is not defined
+
+>>> bg.integer_validator("float", 58.5)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[14]>", line 1, in <module>
+        bg.integer_validator("float", 58.5)
+      File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
+        raise TypeError("{} must be an integer".format(name))
+    TypeError: float must be an integer
+
+>>> bg.integer_validator("int", -5)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest 7-base_geometry.txt[15]>", line 1, in <module>
+        bg.integer_validator("int", -5)
+      File "/home/vagrant/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+        raise ValueError("{} must be greater than 0".format(name))
+    ValueError: int must be greater than 0
