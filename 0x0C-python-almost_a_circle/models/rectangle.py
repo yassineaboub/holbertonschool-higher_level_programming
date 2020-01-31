@@ -97,7 +97,7 @@ class Rectangle(Base):
             """Update rectangle"""
             length = len(args)
             if length >= 1:
-                super().__init__(args[0])
+                Base().__init__(args[0])
             if length >= 2:
                 self.width = args[1]
             if length >= 3:
@@ -116,3 +116,13 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+        def to_dictionary(self):
+                """the dictionary representation of a Rectangle"""
+                recdic = {}
+                recdic["id"] = self.id
+                recdic["width"] = self.width
+                recdic["height"] = self.height
+                recdic["x"] = self.x
+                recdic["y"] = self.y
+                return recdic
