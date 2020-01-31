@@ -68,8 +68,32 @@ class Rectangle(Base):
             for l in range(0, self.x):
                 print(" ", end="")
             for j in range(0, self.width):
-                print('#', end = '')
+                print('#', end ='')
             print()
 
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        length = len(args)
+        if length >= 1:
+            super().__init__(args[0])
+        if length >= 2:
+            self.width = args[1]
+        if length >= 3:
+            self.height = args[2]
+        if length >= 4:
+            self.x = args[3]
+        if length == 5:
+            self.y = args[4]
+        if "id" in kwargs:
+            self.id = kwargs["id"]
+        if "width" in kwargs:
+            self.width = kwargs["width"]
+        if "height" in kwargs:
+            self.height = kwargs["height"]
+        if "x" in kwargs:
+            self.x = kwargs["x"]
+        if "y" in kwargs:
+            self.y = kwargs["y"]
+
