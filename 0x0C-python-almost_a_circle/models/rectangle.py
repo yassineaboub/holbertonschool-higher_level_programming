@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""
-Class rectangle
-"""
+"""Module of rectangle"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-        """Class of rectangle"""
+        """ Class of rectangle """
+
         def __init__(self, width, height, x=0, y=0, id=None):
-            """initializing the rectangle"""
+            """ initializing the rectangle """
+
             super().__init__(id)
             self.width = width
             self.height = height
@@ -19,12 +19,14 @@ class Rectangle(Base):
 
         @property
         def width(self):
-            """width getter"""
+            """ width getter """
+
             return self.__width
 
         @width.setter
         def width(self, value):
-            """width setter"""
+            """ width setter """
+
             if type(value) is not int:
                 raise TypeError("width must be an integer")
             elif value <= 0:
@@ -33,12 +35,14 @@ class Rectangle(Base):
 
         @property
         def height(self):
-            """height getter"""
+
+            """ height getter """
             return self.__height
 
         @height.setter
         def height(self, value):
-            """height setter"""
+
+            """ height setter """
             if type(value) is not int:
                 raise TypeError("height must be an integer")
             elif value <= 0:
@@ -47,12 +51,14 @@ class Rectangle(Base):
 
         @property
         def x(self):
-            """x getter"""
+            """ x getter """
+
             return self.__x
 
         @x.setter
         def x(self, value):
-            """x setter"""
+            """ x setter """
+
             if not isinstance(value, int):
                 raise TypeError("x must be an integer")
             elif value < 0:
@@ -61,12 +67,14 @@ class Rectangle(Base):
 
         @property
         def y(self):
-            """y getter"""
+            """ y getter """
+
             return self.__y
 
         @y.setter
         def y(self, value):
-            """y setter"""
+            """ y setter """
+
             if not isinstance(value, int):
                 raise ValueError("y must be an integer")
             elif value < 0:
@@ -74,11 +82,13 @@ class Rectangle(Base):
             self.__y = value
 
         def area(self):
-            """area of the rectangle"""
+            """ area of the rectangle """
+
             return (self.width * self.height)
 
         def display(self):
-            """display the rectangle"""
+            """ display the rectangle """
+
             for n in range(0, self.y):
                 print()
             for i in range(0, self.height):
@@ -89,12 +99,14 @@ class Rectangle(Base):
                 print()
 
         def __str__(self):
-            """string of the class"""
+            """ string of the class """
+
             return ("[Rectangle] ({}) {}/{} - {}/{}".
                     format(self.id, self.x, self.y, self.width, self.height))
 
         def update(self, *args, **kwargs):
-            """Update rectangle"""
+            """ Update rectangle """
+
             length = len(args)
             if length >= 1:
                 Base().__init__(args[0])
