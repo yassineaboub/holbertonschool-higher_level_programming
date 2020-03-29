@@ -9,7 +9,7 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
     c = db.cursor()
     c.execute("""SELECT id, name FROM states WHERE name LIKE 'N%' ORDER
-              BY id ASC""")
+              BY states.id ASC""")
     res = c.fetchall()
     for row in res:
         print(row)
