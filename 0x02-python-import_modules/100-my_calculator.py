@@ -16,10 +16,10 @@ if operator != '+' and operator != '-'  and operator != '*'  and operator != '/'
 a = int(sys.argv[1])
 b = int(sys.argv[3])
 if operator == '+':
-    print('{:d} + {:d} = {:d}'.format(a, b, operator, add(a, b))
+    print('{:d} + {:d} = {:d}'.format(a, b, add(a, b)))
 if operator == '-':
-    print('{:d} - {:d} = {:d}'.format(a, b, operator, sub(a, b))
+    print('{:d} - {:d} = {:d}'.format(a, b, sub(a, b)))
 if operator == '*':
-    print('{:d} * {:d} = {:d}'.format(a, b, operator, mul(a, b))
+    print('{:d} * {:d} = {:d}'.format(a, b, mul(a, b)))
 if operator == '/':
-    print('{:d} / {:d} = {:d}'.format(a, b, operator, div(a, b))
+    print('{:d} / {:d} = {:d}'.format(a, b, div(a, b)))
