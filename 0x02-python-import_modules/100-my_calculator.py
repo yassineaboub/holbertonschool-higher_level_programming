@@ -9,7 +9,7 @@ if n != 4:
     exit(1)
 
 operator = sys.argv[2]
-if operator != '+' and operator != '-'  and operator != '*'  and operator != '/':
+if operator != '+' and operator != '-' and operator != '*' and operator != '/':
     print('Unknown operator. Available operators: +, -, * and /')
     exit(1)
 
