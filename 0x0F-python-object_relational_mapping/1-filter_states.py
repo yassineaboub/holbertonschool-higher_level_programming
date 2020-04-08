@@ -13,7 +13,5 @@ if __name__ == "__main__":
     res = c.fetchall()
     for row in res:
         print(row)
-
     c.close()
     db.close()
-
