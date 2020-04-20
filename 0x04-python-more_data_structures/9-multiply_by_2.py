@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    dic = dict(a_dictionary)
-    for i in dic:
-        dic[i] *= 2
-    return (dic)
+    dicc = dict(a_dictionary)
+    for i in dicc:
+        dicc[i] *= 2
+    return (dicc)
