@@ -9,7 +9,8 @@ if __name__ == '__main__':
     else:
         q = ""
     try:
-        data = requests.post("http://0.0.0.0:5000/search_user", data={"q": q}).json()
+        data = requests.post("http://0.0.0.0:5000/search_user",
+                             data={"q": q}).json()
         if data:
             print("[{}] {}".format(data['id'], data['name']))
         else:
