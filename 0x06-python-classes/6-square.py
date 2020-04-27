@@ -34,7 +34,7 @@ class Square:
 
     def my_print(self):
         if not self.__size:
-            print("")
+            print()
         else:
             for n in range(self.position[1]):
                 print()
