@@ -9,5 +9,5 @@ class Square extends Ns {
       console.log(c.repeat(this.height));
     }
   }
-};
+}
 module.exports = Square;
